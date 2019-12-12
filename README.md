@@ -24,7 +24,7 @@ For today it is the only way to change starting dir, but in the future some star
    powershell -Command "Start-Process shell:appsFolder\Microsoft.WindowsTerminal_8wekyb3d8bbwe!App -Verb RunAs"
    ```
 
-5. Run `registry.bat`
+5. Run `registry.bat` as Admin
 
    It will suggest you to copy icon to WT settings dir
    NOTE that is might brake if `_8wekyb3d8bbwe` changes, this brakes, so keep it in your mind

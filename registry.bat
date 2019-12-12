@@ -64,6 +64,7 @@ reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\op
 
 reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\openAsAdm" /f /v "Icon" /d "%iconPath%"
 reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\openAsAdm" /f /v "MUIVerb" /d "Open here as Administrator"
+:: System tries to apply admin rights on executable and also adds guard sign to icon
 reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\openAsAdm" /f /v "HasLUAShield"
 
 ::     HKEY_CLASSES_ROOT\Directory\ContextMenus\PowerShell7-previewx64\shell\openpwsh\command
