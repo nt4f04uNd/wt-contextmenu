@@ -10,7 +10,7 @@ Original solution was found [here](https://github.com/microsoft/terminal/issues/
 1. Open `settings.json` and set your terminal starting directory as to be `"startingDirectory": "."`.
 For today it is the only way to change starting dir, but in the future some start parameters should appear, so I will probably update it. [Check out](https://github.com/microsoft/terminal/issues/607)
 2. (Optional) Create some folder in root directory, so you can easily access it. I created `C:\env\windows_terminal`
-3. (Optional, see next clause) Install `nircmd` with `choco install nircmd`
+3. (Optional, see next clause) Install `nircmd` with `choco install nircmd` or with `scoop install nircmd`
 4. Create file in that directory called `run.bat` (or copy it there).
    In that file put the following script
 
