@@ -17,17 +17,17 @@ IF %ERRORLEVEL% EQU 0 (
 )
 
 SET /p SKIP_COPY="Copy icon to a directory, that contains WT settings, to use default path (Y/[N])? "
-IF /I "%SKIP_COPY%" NEQ "Y" (
+IF /I "%SKIP_COPY%" EQU "Y" (
    @echo on
-   xcopy "terminal.ico" "%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" /b /v /y /q
+   xcopy "%~dp0terminal.ico" "%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" /b /v /y /q
    set iconPath="\"%%LOCALAPPDATA%%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\terminal.ico\""
    ECHO Enter:
    @echo off
-) ELSE (
 )
 
-ECHO Enter:
-set /p iconPath="icon path : "
+echo.
+echo Enter
+set /p iconPath="icon path: "
 set /p contextmenuName="context menu naming with NO spaces, e.g. WindowsTerminal: "
 set /p contextmenuLabel="context menu label: "
 set /p openPath="executable path: "

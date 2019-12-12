@@ -43,7 +43,7 @@ For today it is the only way to change starting dir, but in the future some star
    * **path to executable file**
 
    I tried `%LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe`, but it didn't work for me.
-   So I just pasted my full path `C:\Users\UserName\AppData\Local\Microsoft\WindowsApps`
+   So I just pasted my full path `C:\Users\UserName\AppData\Local\Microsoft\WindowsApps\wt.exe`
 
    * **path to bat (or whatever runs wt with admin privileges) file**
 
