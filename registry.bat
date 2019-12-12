@@ -21,7 +21,6 @@ IF /I "%SKIP_COPY%" EQU "Y" (
    @echo on
    xcopy "%~dp0terminal.ico" "%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" /b /v /y /q
    set iconPath="\"%%LOCALAPPDATA%%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\terminal.ico\""
-   ECHO Enter:
    @echo off
 )
 
