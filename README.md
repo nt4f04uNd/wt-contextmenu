@@ -5,6 +5,8 @@ It is a short guide with batch files to add windows terminal to windows context 
 *Thanks to [EmTschi](https://github.com/EmTschi) for giving an [idea](https://github.com/microsoft/terminal/issues/632#issuecomment-539420599)*.
 Original solution was found [here](https://github.com/microsoft/terminal/issues/1060)
 
+NOTE WHEN YOU USE ADMIN TERMINAL, YOU START IN `SYSTEM32`, SO BE CAREFUL AND KEEP IT IN MIND
+
 Unfortunately, it is currently impossible to have "Run as Administrator" and mount in current directory,
 unless they add parameters to wt, that will allow to change starting directory. [Check out](https://github.com/microsoft/terminal/issues/607)
 
