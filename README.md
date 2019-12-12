@@ -5,10 +5,13 @@ It is a short guide with batch files to add windows terminal to windows context 
 *Thanks to [EmTschi](https://github.com/EmTschi) for giving an [idea](https://github.com/microsoft/terminal/issues/632#issuecomment-539420599)*.
 Original solution was found [here](https://github.com/microsoft/terminal/issues/1060)
 
+Unfortunately, it is currently impossible to have "Run as Administrator" and mount in current directory,
+unless they add parameters to wt, that will allow to change starting directory. [Check out](https://github.com/microsoft/terminal/issues/607)
+
 ## Guidance
 
 1. Open `settings.json` and set your terminal starting directory as to be `"startingDirectory": "."`.
-For today it is the only way to change starting dir, but in the future some start parameters should appear, so I will probably update it. [Check out](https://github.com/microsoft/terminal/issues/607)
+For today it is the only way to change starting dir, but in the future some start parameters should be added, so I will probably update it
 2. (Optional) Create some folder in root directory, so you can easily access it. I created `C:\env\windows_terminal`
 3. (Optional, see next clause) Install `nircmd` with `choco install nircmd` or with `scoop install nircmd`
 4. Create file in that directory called `run.bat` (or copy it there).
