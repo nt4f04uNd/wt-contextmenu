@@ -10,6 +10,8 @@ NOTE WHEN YOU USE ADMIN TERMINAL, YOU START IN `SYSTEM32`, SO BE CAREFUL AND KEE
 Unfortunately, it is currently impossible to have "Run as Administrator" and mount in current directory,
 unless they add parameters to wt, that will allow to change starting directory. [Check out](https://github.com/microsoft/terminal/issues/607)
 
+![Gif demo](https://media.giphy.com/media/WtJR5iJ1WngaKHye7G/giphy.gif)
+
 ## Guidance
 
 1. Open `settings.json` and set your terminal starting directory as to be `"startingDirectory": "."`.
