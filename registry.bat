@@ -25,12 +25,24 @@ IF /I "%SKIP_COPY%" EQU "Y" (
 )
 
 echo.
-echo Enter
-set /p iconPath="icon path: "
-set /p contextmenuName="context menu naming with NO spaces, e.g. WindowsTerminal: "
+echo Enter:
+IF /I "%SKIP_COPY%" NEQ "Y" (
+   echo.
+   set /p iconPath="icon path: "
+)
+echo.
+echo (example) WindowsTerminal
+set /p contextmenuName="context menu naming with NO spaces: "
+echo.
+echo (example) Windows Terminal
 set /p contextmenuLabel="context menu label: "
+echo.
+echo (example) C:\Users\^<USERNAME^>\AppData\Local\Microsoft\WindowsApps\wt.exe
 set /p openPath="executable path: "
+echo.
+echo (example) C:\env\windows_terminal\run.bat
 set /p openAdmPath="executable administrator (run.bat) path: "
+echo.
 
 :: https://stackoverflow.com/questions/1794547/how-can-i-make-an-are-you-sure-prompt-in-a-windows-batchfile
 @echo off
@@ -72,7 +84,7 @@ reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\op
 ::          Icon        REG_SZ <PATH>
 ::          MUIVerb     REG_SZ <Label>
 
-reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\open\command" /f /ve /d "%openPath%"
+reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\open\command" /f /ve /d "%openPath% -d ""%%V"""
 reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\openAsAdm\command" /f /ve /d "%openAdmPath%"
 
 
