@@ -5,6 +5,8 @@ It is a short guide with batch files to add windows terminal to windows context 
 *Thanks to [EmTschi](https://github.com/EmTschi) for giving an [idea](https://github.com/microsoft/terminal/issues/632#issuecomment-539420599)*.
 Original solution was found [here](https://github.com/microsoft/terminal/issues/1060)
 
+![Gif demo](https://media.giphy.com/media/WtJR5iJ1WngaKHye7G/giphy.gif)
+
 ## Guidance
 
 1. (Optional) Create some folder in root directory, so you can easily access it. I created `C:\env\windows_terminal`
@@ -25,7 +27,8 @@ Original solution was found [here](https://github.com/microsoft/terminal/issues/
 4. Run `registry.bat` as Admin
 
    It will suggest you to copy icon to WT settings dir
-   NOTE that is might brake if `_8wekyb3d8bbwe` changes, this brakes, so keep it in your mind
+   
+   NOTE if `_8wekyb3d8bbwe` changes, this brakes, so keep it in your mind
 
    Then you have to specify:
    * **icon path**.
