@@ -21,7 +21,7 @@ Original solution was found [here](https://github.com/microsoft/terminal/issues/
    nircmd.exe win hide ititle "cmd.exe" 
    
    :: Run windows terminal as administrator
-   powershell -Command "Start-Process cmd -Verb RunAs -ArgumentList '/c start wt -d %CD%'"
+   powershell -Command "Start-Process cmd -Verb RunAs -ArgumentList '/c start wt -d \"%CD%\"'"
    ```
 
 4. Run `registry.bat` as Admin
