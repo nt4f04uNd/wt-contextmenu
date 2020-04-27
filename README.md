@@ -5,7 +5,7 @@ It is a short guide with batch files to add windows terminal to windows context 
 *Thanks to [EmTschi](https://github.com/EmTschi) for giving an [idea](https://github.com/microsoft/terminal/issues/632#issuecomment-539420599)*.
 Original solution was found [here](https://github.com/microsoft/terminal/issues/1060)
 
-![Gif demo](https://media.giphy.com/media/WtJR5iJ1WngaKHye7G/giphy.gif)
+![Gif demo](/demo.gif)
 
 ## Guidance
 
