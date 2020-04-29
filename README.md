@@ -1,6 +1,6 @@
 # wt-contextmenu
 
-It is a short guide with batch files to add windows terminal to windows context menu
+Run Windows Terminal from the context menu
 
 *Thanks to [EmTschi](https://github.com/EmTschi) for giving an [idea](https://github.com/microsoft/terminal/issues/632#issuecomment-539420599)*.
 Original solution was found [here](https://github.com/microsoft/terminal/issues/1060)
