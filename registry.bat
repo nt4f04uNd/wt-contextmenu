@@ -1,4 +1,7 @@
 echo OFF
+:: cd to batch location directory
+cd %~dp0
+
 NET SESSION >nul 2>&1
 IF %ERRORLEVEL% EQU 0 (
 	echo Administrator privileges detected! 
@@ -16,40 +19,43 @@ IF %ERRORLEVEL% EQU 0 (
    EXIT /B 1
 )
 
+
+
 SET /p SKIP_COPY="Copy icon to a directory, that contains WT settings, to use default path (Y/[N])? "
 IF /I "%SKIP_COPY%" EQU "Y" (
    @echo on
-   xcopy "%~dp0terminal.ico" "%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" /b /v /y /q
+   xcopy "terminal.ico" "%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" /v /y /q
    set iconPath="\"%%LOCALAPPDATA%%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\terminal.ico\""
    @echo off
 )
 
 echo.
 echo Enter:
-IF /I "%SKIP_COPY%" NEQ "Y" (
+if /I "%SKIP_COPY%" NEQ "Y" (
    echo.
    set /p iconPath="icon path: "
 )
 echo.
-echo (example) WindowsTerminal
-set /p contextmenuName="context menu naming with NO spaces: "
+
+set /p contextmenuName="context menu naming with NO spaces (leave empty for "WindowsTerminal"): " || set "contextmenuName=WindowsTerminal"
 echo.
-echo (example) Windows Terminal
-set /p contextmenuLabel="context menu label: "
+
+set /p contextmenuLabel="context menu label (leave empty for "Windows Terminal"): " || set "contextmenuLabel=Windows Terminal"
 echo.
-echo (example) C:\Users\^<USERNAME^>\AppData\Local\Microsoft\WindowsApps\wt.exe
-set /p openPath="executable path: "
-echo.
-echo (example) C:\env\windows_terminal\run.bat
-set /p openAdmPath="executable administrator (run.bat) path: "
+
+echo the absolute path "wt-admin.vbs" will be copied in,
+set /p openAdmPath="you can also add it to path and use as command (leave empty for "C:\env\commands"): " || set "openAdmPath=C:\env\commands"
+@echo on
+xcopy "wt-admin.vbs" "%openAdmPath%" /v /y /q
+@echo off
 echo.
 
 :: https://stackoverflow.com/questions/1794547/how-can-i-make-an-are-you-sure-prompt-in-a-windows-batchfile
 @echo off
 setlocal
 :PROMPT
-SET /P AREYOUSURE="Are you sure (Y/[N])? "
-IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+set /P AREYOUSURE="Are you sure (Y/[N])? "
+if /I "%AREYOUSURE%" neq "Y" GOTO END
 
 :: /ve sets default value
 :: /v stands for value
@@ -84,8 +90,8 @@ reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\op
 ::          Icon        REG_SZ <PATH>
 ::          MUIVerb     REG_SZ <Label>
 
-reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\open\command" /f /ve /d "%openPath% -d ""%%V"""
-reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\openAsAdm\command" /f /ve /d "%openAdmPath%"
+reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\open\command" /f /ve /d "%LocalAppData%\Microsoft\WindowsApps\wt.exe -d ""%%V"""
+reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\openAsAdm\command" /f /ve /d "wscript.exe \"%openAdmPath%\wt-admin.vbs\" \"%%V\""
 
 
 ECHO.
