@@ -90,8 +90,8 @@ reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\op
 ::          Icon        REG_SZ <PATH>
 ::          MUIVerb     REG_SZ <Label>
 
-reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\open\command" /f /ve /d "%LocalAppData%\Microsoft\WindowsApps\wt.exe -d ""%%V"""
-reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\openAsAdm\command" /f /ve /d "wscript.exe \"%openAdmPath%\wt-admin.vbs\" \"%%V\""
+reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\open\command" /f /ve /d "%LocalAppData%\Microsoft\WindowsApps\wt.exe -d ""%%V\\."""
+reg.exe add "HKEY_CLASSES_ROOT\Directory\ContextMenus\%contextmenuName%\shell\openAsAdm\command" /f /ve /d "wscript.exe \"%openAdmPath%\wt-admin.vbs\" \"%%V\\.\""
 
 
 ECHO.
