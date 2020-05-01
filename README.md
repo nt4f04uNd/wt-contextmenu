@@ -31,4 +31,9 @@ If answered "y", you can now use that path to access icon
 
 **Done!**
 
-P.S. If you have something not working - try to run `registry.bat` again and avoid any spaces before and after paths.
+If you have something not working - try to run `registry.bat` again and avoid any spaces before and after paths.
+
+## Removal
+
+Run `remove.bat` as Admin
+
