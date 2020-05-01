@@ -11,6 +11,7 @@ Original solution was found [here](https://github.com/microsoft/terminal/issues/
 
 1. In right click context-menu
 2. Run `wt-admin` command in cmd/powershell.
+   * `wt-admin` also has optional positional argument for the start dir
 
 ## Installation
 
