@@ -6,6 +6,7 @@ Run Windows Terminal from the context menu
 Original solution was found [here](https://github.com/microsoft/terminal/issues/1060)
 
 ![Gif demo](/demo.gif)
+![Gif demo 2](/demo2.gif)
 
 ## Usage
 
