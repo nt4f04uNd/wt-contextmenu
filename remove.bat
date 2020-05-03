@@ -40,6 +40,7 @@ if exist  "C:\env\commands\wt-admin.vbs" (
 )
 
 
+reg delete "HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminal" /f
 reg delete "HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminal" /f
 reg delete "HKEY_CLASSES_ROOT\Directory\ContextMenus\WindowsTerminal" /f
 

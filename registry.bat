@@ -51,6 +51,9 @@ if /I "%AREYOUSURE%" neq "Y" GOTO END
 ::          ExtendedSubCommandsKey REG_SZ Directory\ContextMenus\PowerShell7-previewx64
 ::          Icon                   REG_SZ <PATH>
 ::          MUIVerb                &PowerShell 7-preview
+reg add "HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminal" /f /v "ExtendedSubCommandsKey" /d "Directory\ContextMenus\WindowsTerminal"
+reg add "HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminal" /f /v "Icon" /d "%iconPath%"
+reg add "HKEY_CLASSES_ROOT\Directory\shell\WindowsTerminal" /f /v "MUIVerb" /d "Windows Terminal"
 reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminal" /f /v "ExtendedSubCommandsKey" /d "Directory\ContextMenus\WindowsTerminal"
 reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminal" /f /v "Icon" /d "%iconPath%"
 reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\WindowsTerminal" /f /v "MUIVerb" /d "Windows Terminal"
