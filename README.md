@@ -20,14 +20,9 @@ Run `registry.bat` as Admin
 
 It will suggest you to copy icon to WT settings dir
 
-NOTE that `_8wekyb3d8bbwe` may change, so keep it mind
+NOTE that `_8wekyb3d8bbwe` that is in name of wt source folder may change, so keep it mind
 
 Specify:
-* **icon path**
-If answered "y", you can now use that path to access icon
-`%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\terminal.ico`
-* **name** to identify WT in registry (`WindowsTerminal`)
-* **label** for context menu (by default `Windows Terminal`)
 * **path to wt-admin.vbs** full path where you want ro preserve `wt-admin.vbs`, (by default `C:\env\commands`), I also recommend you to add it to PATH variable to access it from cmd/powershell
 
 **Done!**
